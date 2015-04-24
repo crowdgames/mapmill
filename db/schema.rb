@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141231221152) do
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "custom",                              default: 0.0
     t.decimal  "quality",    precision: 10, scale: 0, default: 0
     t.decimal  "lat",        precision: 10, scale: 6
     t.decimal  "lng",        precision: 10, scale: 6
