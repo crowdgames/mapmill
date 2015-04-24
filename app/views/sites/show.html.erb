@@ -36,7 +36,7 @@
 <div class="sites-show-well-mobile hidden-sm hidden-md hidden-lg">
   <%= upload_more_button.html_safe %>
   <%= fullscreen_button.html_safe %>
-  <button onclick="window.location = '/sites/<%= @site.id %>/map'" id="show_map" class="btn-lg btn-success"><i class="fa fa-map-marker"></i> Map</button>
+  
   <% unless logged_in? %><p><%= log_in_message.html_safe %></p><% end %> 
 </div>
 <hr />
@@ -54,10 +54,8 @@
 </div>
 
 <h2><%= @site.name %> <small><%= @site.images.count %> images
-  <% if params[:sort] == 'rank' %>&nbsp; <a href="/sites/<%= @site.id %>">by upload order</a><% else %>
-  &nbsp; <span>by upload order</span><% end %> 
-  <% unless params[:sort] == 'rank' %>| <a href="/sites/<%= @site.id %>?sort=rank">by rank<span class="hidden-xs">ing</span></a><% else %> 
-  | <span>by rank<span class="hidden-xs">ing</span></span><% end %> 
+  <% if params[:sort] == 'custom' %>| <a href="/sites/<%= @site.id %>?sort=custom">image order<span class="hidden-xs"></span></a><% else %> 
+  <% end %> 
   <!--| <a href="">by <span class="hidden-xs"># of </span>votes</a></span>-->
   </small></h2>
 
@@ -88,12 +86,12 @@
           
             <div class="col-xs-3">
               <button id="btn_good_<%= img.id %>" type="button" class="btn btn-success <%= btn_disabled %>">
-                none
+                light
               </button>
             </div>
             <div class="col-xs-3 ">
               <button id="btn_nok_<%= img.id %>" type="button" class="btn btn-primary <%= btn_disabled %>">
-                some
+                mod.
               </button>
             </div>
             <div class="col-xs-3">
