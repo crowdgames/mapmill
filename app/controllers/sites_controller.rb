@@ -81,8 +81,8 @@ class SitesController < ApplicationController
     
     @cookie = ::ApplicationHelper::get_cookie_id(cookies)
     seed_final = @cookie.gsub(/[^0-9]/, "").to_i		#turn this string into integer w/only numbers included
-    orderimg = Image.where('custom != 0').order('custom asc') 
-    randimg = Image.where('custom == 0').order('id asc').shuffle(random: Random.new(seed_final))
+    orderimg = Image.where(site_id:params[:id]).where('custom != 0').order('custom asc') 
+    randimg = Image.where(site_id:params[:id]).where('custom == 0').order('id asc').shuffle(random: Random.new(seed_final))
     @images = orderimg.push(*randimg)
     @images = @images.paginate(:page => params[:page], :per_page => 24) unless @images.nil?
     @images ||= []
