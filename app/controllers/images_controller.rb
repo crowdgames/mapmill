@@ -74,18 +74,18 @@ class ImagesController < ApplicationController
       params.permit(:url, :thumbnail, :lat, :lng)
     end
 	
-	def get_cookie_id
-		ckey = "_mapmill_voting_"
-		if cookies[ckey]
-			return cookies[ckey]
-		else
-			cookie_id = SecureRandom.base64 
-			cookies[ckey] = cookie_id
-			return cookie_id
-		end
-	end
+    def get_cookie_id
+      ckey = "_mapmill_voting_"
+      if cookies[ckey]
+        return cookies[ckey]
+      else
+        cookie_id = SecureRandom.base64 
+        cookies[ckey] = cookie_id
+        return cookie_id
+      end
+    end
 	
-	def set_quality(val)
+    def set_quality(val)
       if only_xhr
         return
       end      

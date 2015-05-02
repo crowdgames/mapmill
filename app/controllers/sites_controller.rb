@@ -68,22 +68,22 @@ class SitesController < ApplicationController
   #Full Screen view of a site
   ##############################################################
   def fullscreen
-  @site = site.find(params[:id])
+    @site = site.find(params[:id])
   end
   
   ##############################################################
   #Get the cookie value
   ##############################################################
-	def get_cookie_id
-		ckey = "_mapmill_voting_"
-		if cookies[ckey]
-			return cookies[ckey]
-		else
-			cookie_id = SecureRandom.base64 
-			cookies[ckey] = cookie_id
-			return cookie_id
-		end
-	end
+  def get_cookie_id
+    ckey = "_mapmill_voting_"
+    if cookies[ckey]
+      return cookies[ckey]
+    else
+      cookie_id = SecureRandom.base64 
+      cookies[ckey] = cookie_id
+      return cookie_id
+    end
+  end
   
   ##############################################################
   # Show a site
@@ -92,11 +92,11 @@ class SitesController < ApplicationController
     # If an image has been voted, we need to disable voting, this is done via cookie
     @site = Site.find(params[:id])
 	
-	cookie_id = get_cookie_id()
-	seed_final = cookie_id.gsub(/[^0-9]/, "").to_i		#turn this string into integer w/only numbers included
-	orderimg = Image.where('custom != 0').order('custom asc') 
-	randimg = Image.where('custom == 0').order('id asc').shuffle(random: Random.new(seed_final))
-	@images = orderimg.push(*randimg)
+    @cookie = get_cookie_id()
+    seed_final = @cookie.gsub(/[^0-9]/, "").to_i		#turn this string into integer w/only numbers included
+    orderimg = Image.where('custom != 0').order('custom asc') 
+    randimg = Image.where('custom == 0').order('id asc').shuffle(random: Random.new(seed_final))
+    @images = orderimg.push(*randimg)
     @images = @images.paginate(:page => params[:page], :per_page => 24) unless @images.nil?
     @images ||= []
     @votes = {}
