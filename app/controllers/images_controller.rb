@@ -1,3 +1,4 @@
+require 'application_helper'
 
 class ImagesController < ApplicationController
 
@@ -27,7 +28,7 @@ class ImagesController < ApplicationController
     votes = Vote.find_by_image(@image)
     if votes
       votes.each do | v |
-        if v.cookie == get_cookie_id()
+        if v.cookie == ::ApplicationHelper::get_cookie_id(cookies)
           @voting_disabled = true
         end
       end
@@ -74,17 +75,6 @@ class ImagesController < ApplicationController
       params.permit(:url, :thumbnail, :lat, :lng)
     end
 	
-    def get_cookie_id
-      ckey = "_mapmill_voting_"
-      if cookies[ckey]
-        return cookies[ckey]
-      else
-        cookie_id = SecureRandom.base64 
-        cookies[ckey] = cookie_id
-        return cookie_id
-      end
-    end
-	
     def set_quality(val)
       if only_xhr
         return
@@ -94,7 +84,7 @@ class ImagesController < ApplicationController
       @vote.value = val 
 	  
       # store vote id via cookie
-      @vote.cookie = get_cookie_id()
+      @vote.cookie = ::ApplicationHelper::get_cookie_id(cookies)
      
       # update image "quality" by averaging votes
       if @vote.save!
