@@ -494,6 +494,11 @@ $(document).ready ->
       type: "GET"
       dataType: 'json'
       success: (image) ->
+        if $('#blueimp-gallery').hasClass('auto-advance')
+          # auto-advance to next image
+          $('#blueimp-gallery').data('gallery').next()
+          return
+
         quality = image.quality
         quality_class = 'assigned_quality'
         # Different classes for the image set list or the detailed image dialog view
@@ -518,6 +523,7 @@ $(document).ready ->
         btn_group.find('.btn').each( (i,elem) ->
           $(this).addClass('btn_disabled')
         )
+
       error: (jqXHR, textStatus, errorThrown) ->
         console.log textStatus
         console.log errorThrown
@@ -553,9 +559,15 @@ $(document).ready ->
             if isAndroid || isNativeAndroid
               $('#blueimp-gallery .detail_image_controls .btn-group-justified').addClass('voting_disabled_android')
             $('#blueimp-gallery .detail_image_controls .btn-group-justified').addClass('voting_disabled')
+            $('#blueimp-gallery .detail_image_controls .btn').each( (i, elem) ->
+              $(this).addClass('btn_disabled')
+            )
           else
             $('#blueimp-gallery .detail_image_controls .btn-group-justified').removeClass('voting_disabled_android')
             $('#blueimp-gallery .detail_image_controls .btn-group-justified').removeClass('voting_disabled')
+            $('#blueimp-gallery .detail_image_controls .btn').each( (i, elem) ->
+              $(this).removeClass('btn_disabled')
+            )
           $('#blueimp-gallery .detail_image_controls .btn').each( (i, elem) ->
             if $(this).hasClass('assigned_quality_single')
               $(this).removeClass('assigned_quality_single')
