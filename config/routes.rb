@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get   '/images/:id' => 'images#show'
 
   get   'utils/consent'
+  get   'utils/agree'
 
   # You can have the root of your site routed with "root"
   root  'home#front'
