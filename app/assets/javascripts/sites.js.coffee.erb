@@ -71,7 +71,7 @@ $(document).ready ->
       if $(img).hasClass 'selected_img'
         $(img).trigger('click')
     $('.file-count').html(file_list.length)
-
+	
 #####################
 # keypress handling for hotkeys
 #####################
@@ -529,11 +529,13 @@ $(document).ready ->
         console.log errorThrown
 
   current_img = 0
-
+	
 #####################
 # fullscreen mode
 #####################
-
+  $('#test_button').click () ->
+	  alert 'one day this will be a blueimp gallery'
+	  
   # Click handlers for setting the image quality in the detailed dialog view
   $('#blueimp-gallery .detail_image_controls .btn-success').click () ->
     set_quality $(this), current_img, 'set_good'
@@ -594,4 +596,3 @@ $(document).ready ->
     .on('closed', (event) ->
         # Gallery closed event handler
     )
-
