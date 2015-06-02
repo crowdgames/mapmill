@@ -533,12 +533,12 @@ $(document).ready ->
 #####################
 # fullscreen mode
 #####################
-  $(document).ready ->
+  $(document).on 'ready page:loaded', ->
     $('#test_button').trigger('click')
-
   $('#test_button').click () ->
-	  alert 'one day this will be a blueimp gallery'
-	  
+    $('#links .thumbnail').first().click()
+  $(document).ready ->
+    $('#blueimp-gallery').data('gallery').options('closeOnEscape', false)
   # Click handlers for setting the image quality in the detailed dialog view
   $('#blueimp-gallery .detail_image_controls .btn-success').click () ->
     set_quality $(this), current_img, 'set_good'
