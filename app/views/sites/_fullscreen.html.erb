@@ -1,11 +1,12 @@
-<div id="blueimp-gallery" class="fullscreen blueimp-gallery auto-advance">
+<div id="blueimp-gallery" class="fullscreen blueimp-gallery blueimp-gallery-controls auto-advance" data-close-on-escape="false" data-close-on-slide-click="false" data-close-on-swipe-up-or-down="false">
+<p class="download"></p>
   <!-- The container for the modal slides -->
   <div class="slides"></div>
   <!-- Controls for the borderless lightbox -->
     <div class="detail_image_controls">
       <div class="btn-group btn-group-justified">
         <div class="btn-group">
-          <button id="btn_good" type="button" class="btn btn-lg btn-success detail_control ">
+          <button id="btn_good" type="button" class="btn btn-lg btn-success detail_control">
             none
           </button>
         </div>
@@ -21,12 +22,13 @@
         </div><!-- btn-group -->
       </div><!-- btn-group-justified -->
     </div><!-- image_controls -->
-  <h3 class="title"></h3>
+  <!--<h3 class="title"></h3>
+  <a class="close">Exit</a>
   <a class="prev">‹</a>
   <a class="next">›</a>
   <a class="close">×</a>
   <a class="play-pause"></a>
-  <ol class="indicator"></ol>
+  <ol class="indicator"></ol> -->
   <!-- The modal dialog, which will be used to wrap the lightbox content -->
   <div class="modal fade">
     <div class="modal-dialog">
@@ -34,7 +36,7 @@
         <div class="modal-header">
           <button type="button" class="close" aria-hidden="true">&times;</button>
           <h4 class="modal-title"></h4>
-        </v>
+        </div>
         <d class="modal-body next"></div>
         <d class="modal-footer">
           <button type="button" class="btn btn-default pull-left prev">
