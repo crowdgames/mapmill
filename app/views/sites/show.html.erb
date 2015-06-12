@@ -4,7 +4,7 @@
   fullscreen_button = '<button class="btn-lg btn-primary" id="full-screen"><i class="fa fa-square-o fa-lg"></i> Full screen</button>'
 %>
 
-<div class='well well-white'>
+<div class='well well-white' style='display:none'>
   <div class='row sites-show-well-top'>
   
     <div class='col-sm-3'>
@@ -62,11 +62,13 @@
 
 <br />
 
-<div id="test">
-<button id="test_button">Aspiration</button>
-</div>
+<center>
+    <div class='col-sm-3 hidden-xs'>
+	 <button id="test_button"><h3>START</h3></button>
+    </div>
+</center>
 
-<div class="site_details">
+<div class="site_details">  
   <div id="links" class="row">
     <% @images.each do |img| %>
       <% 
