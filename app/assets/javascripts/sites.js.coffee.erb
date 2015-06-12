@@ -72,6 +72,7 @@ $(document).ready ->
         $(img).trigger('click')
     $('.file-count').html(file_list.length)
 	
+
 #####################
 # keypress handling for hotkeys
 #####################
@@ -465,7 +466,7 @@ $(document).ready ->
 #####################
 # image voting
 #####################
-
+ 
   # Click handlers when selecting image quality
   $('.image_controls .btn-success').click () ->
     btn       = $(this)
@@ -533,13 +534,10 @@ $(document).ready ->
 #####################
 # fullscreen mode
 #####################
-  $(document).on 'ready page:loaded', ->
-    $('#test_button').trigger('click')
   $('#test_button').click () ->
     $('#links .thumbnail').first().click()
-  $(document).ready ->
-    $('#blueimp-gallery').data('gallery').options('closeOnEscape', false)
-  # Click handlers for setting the image quality in the detailed dialog view
+  
+	# Click handlers for setting the image quality in the detailed dialog view
   $('#blueimp-gallery .detail_image_controls .btn-success').click () ->
     set_quality $(this), current_img, 'set_good'
 
@@ -589,13 +587,17 @@ $(document).ready ->
     )
     .on('slideend', (event, index, slide) ->
         # Gallery slideend event handler
+        if $('#blueimp-gallery .detail_image_controls .btn-group-justified').hasClass('voting_disabled')
+          location.href='/surveys'
     )
     .on('slidecomplete', (event, index, slide) ->
         # Gallery slidecomplete event handler
     )
     .on('close', (event) ->
         # Gallery close event handler
+        location.href='/surveys'
     )
     .on('closed', (event) ->
         # Gallery closed event handler
+        location.href='/surveys'
     )
