@@ -496,8 +496,12 @@ $(document).ready ->
       dataType: 'json'
       success: (image) ->
         if $('#blueimp-gallery').hasClass('auto-advance')
-          # auto-advance to next image
-          $('#blueimp-gallery').data('gallery').next()
+          gallery = $('#blueimp-gallery').data('gallery')
+          if gallery.getIndex()+1 == gallery.getNumber()
+            location.href='/utils/done'
+          else
+            # auto-advance to next image
+            gallery.next()
           return
 
         quality = image.quality
@@ -587,17 +591,15 @@ $(document).ready ->
     )
     .on('slideend', (event, index, slide) ->
         # Gallery slideend event handler
-        if $('#blueimp-gallery .detail_image_controls .btn-group-justified').hasClass('voting_disabled')
-          location.href='/surveys'
     )
     .on('slidecomplete', (event, index, slide) ->
         # Gallery slidecomplete event handler
     )
     .on('close', (event) ->
         # Gallery close event handler
-        location.href='/surveys'
+        location.href='/utils/done'
     )
     .on('closed', (event) ->
         # Gallery closed event handler
-        location.href='/surveys'
+        location.href='/utils/done'
     )
