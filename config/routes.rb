@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Surveyor::Engine => "/surveys", :as => "surveyor"
   get 'home/front'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
 
   get   'utils/consent'
   get   'utils/agree'
+  get   'utils/done'
 
   # You can have the root of your site routed with "root"
   root  'home#front'
