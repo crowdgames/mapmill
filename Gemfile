@@ -67,3 +67,4 @@ gem 'leaflet-rails',          '0.7.4'
 gem 'passenger',              '4.0.53'
 #gem 'mysql'
 #gem 'pg',                     '0.17.1'
+gem 'surveyor', :github => "NUBIC/surveyor", :branch => "master"
