@@ -16,6 +16,6 @@ class UtilsController < ApplicationController
   end
   
   def done
-    redirect_to("/surveys")
+    redirect_to("/surveys/mapmill/vSUU1DM3Fw/take")
   end
 end
