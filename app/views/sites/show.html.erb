@@ -54,7 +54,7 @@
    You have tried to change a rating without selecting an image! Please select an image first.
 </div>
 
-<h2><%= @site.name %> <small><%= @site.images.count %> images
+<h2 style="display: none"><%= @site.name %> <small><%= @site.images.count %> images
   <% if params[:sort] == 'custom' %>| <a href="/sites/<%= @site.id %>?sort=custom">image order<span class="hidden-xs"></span></a><% else %> 
   <% end %> 
   <!--| <a href="">by <span class="hidden-xs"># of </span>votes</a></span>-->
@@ -64,7 +64,7 @@
 
 <center>
     <div class='col-sm-3 hidden-xs'>
-	 <button id="test_button"><h3>START</h3></button>
+	 <button id="test_button" class="test_button"><h3>START</h3></button>
     </div>
 </center>
 
