@@ -262,3 +262,18 @@ canvas.canvas-thumbnail {
 .detail_image_controls {
   padding:0 40px;
 }
+.test_button {
+  color:#FF0000
+}
+.exit {
+  bottom: 210px;
+  left: 550px;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color:#000000;
+  opacity: 0.4;
+  filter: alpha(opacity=60); 
+  text-decoration: none;
+  cursor: pointer;
+}
