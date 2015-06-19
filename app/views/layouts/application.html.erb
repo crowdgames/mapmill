@@ -15,7 +15,7 @@
 </head>
 <body id="mapmill-<%= params[:controller] %>-<%= params[:action] %>">
 
-  <header role="header">
+  <header role="header" style="display: none">
     <div class="container">
       <div class="header">
         <h1 class="page_title"><a href="/">MapMill</a> <small class='hidden-xs'>by <a href="http://publiclab.org"> Public Lab</a></small></h1> 
@@ -43,7 +43,7 @@
   <% if content_for?(:footer) %>
     <%= yield(:footer) %>
   <% else %>
-    <footer class="footer">
+    <footer class="footer" style="display: none">
       <div class="row">
         <div class="col-md-3">
           <p>MapMill 2.0 is a project by <a href="http://publiclab.org">Public Lab</a>, and is <a href="https://github.com/publiclab/mapmill">open source software</a>.</p>
