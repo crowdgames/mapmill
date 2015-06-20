@@ -64,8 +64,8 @@
 <div class="site_details">
     <center>
 	<h2>
-	Click START to begin sorting images. Rate an image based on its levels of damage according to none, some or heavy damage.
-	When you are done voting, click the DONE button to complete a short survey. Thank you for your help!
+	Click START to begin rating images. Rate an image based on its levels of damage according to none, some or heavy damage.
+	When you are done rating, click the DONE button to complete a short survey. Thank you for your help!
 	</h2>
 	<p>
 	<p/>
@@ -123,7 +123,7 @@
     <% end %>
   </div><!-- links row -->
 </div><!-- site_details -->
-<div class="pagination-parent">
+<div class="pagination-parent" style="display:none">
  <%= will_paginate @images, renderer: BootstrapPagination::Rails if @images != [] %>
 </div>
 <%= render :partial => 'sites/fullscreen' %>
