@@ -82,6 +82,12 @@ If you still encounter problems with cross-domain errors, you can disable these 
 
 
 
+== Running with SSL
+
+thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
+
+
+
 == Usage
 
 The app only allows image upload after login. Login is only allowed with PublicLab's OpenID infrastructure.

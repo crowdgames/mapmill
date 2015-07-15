@@ -67,4 +67,9 @@ gem 'leaflet-rails',          '0.7.4'
 gem 'passenger',              '4.0.53'
 #gem 'mysql'
 #gem 'pg',                     '0.17.1'
+
+# for survey forms
 gem 'surveyor', :github => "NUBIC/surveyor", :branch => "master"
+
+# server to use ssl
+gem 'thin'
