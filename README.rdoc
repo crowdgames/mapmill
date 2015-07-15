@@ -84,7 +84,9 @@ If you still encounter problems with cross-domain errors, you can disable these 
 
 == Running with SSL
 
-thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
+To run the the servert with support for ssl/https you can use the following command:
+
+  thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
 
 
 
