@@ -28,7 +28,8 @@ Rails.application.routes.draw do
 
   get   'utils/consent'
   get   'utils/agree'
-  get   'utils/done'
+  
+  get   '/done', to: redirect('/surveys/mapmill/create')
 
   # You can have the root of your site routed with "root"
   root  'home#front'
@@ -81,4 +82,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
+Surveyor::Engine.routes.draw do
+  match '/:survey_code/create', :to                         => 'surveyor#create', :as => 'create_survey', :via       => :all
 end
