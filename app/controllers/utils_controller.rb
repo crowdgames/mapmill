@@ -14,8 +14,4 @@ class UtilsController < ApplicationController
     # do a redirect
     redirect_to(@new_site_url)
   end
-  
-  def done
-    redirect_to("/surveys/mapmill/vSUU1DM3Fw/take")
-  end
 end
