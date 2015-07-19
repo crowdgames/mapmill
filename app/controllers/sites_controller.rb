@@ -80,7 +80,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     
     @cookie = ::ApplicationHelper::get_cookie_id(cookies)
-    seed_final = @cookie.gsub(/[^0-9]/, "").to_i		#turn this string into integer w/only numbers included
+    seed_final = ::ApplicationHelper::cookie_id_to_int(@cookie) #turn this string into integer w/only numbers included
     orderimg = Image.where(site_id:params[:id]).where('custom != 0').order('custom asc') 
     randimg = Image.where(site_id:params[:id]).where('custom == 0').order('id asc').shuffle(random: Random.new(seed_final))
     @images = orderimg.push(*randimg)

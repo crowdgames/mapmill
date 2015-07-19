@@ -6,7 +6,7 @@ class UtilsController < ApplicationController
 
   def agree
     # randomly choose a site based on cookie
-    new_site_id = 1 + (::ApplicationHelper::cookie_id_to_int(cookies) % NUM_SITES)
+    new_site_id = 1 + (::ApplicationHelper::cookie_id_to_int(::ApplicationHelper::get_cookie_id(cookies)) % NUM_SITES)
 
     # make full URL
     @new_site_url = request.base_url + "/sites/" + new_site_id.to_s
