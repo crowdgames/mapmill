@@ -1,0 +1,20 @@
+<html>
+  <br>
+  <br>
+  <center>
+    <body>
+    <h1>Thank you for participating! Click Submit to complete your HIT!</h1>
+    </center>
+        <form action= "<%= @turkSubmitTo %>/externalSubmit" method="POST">
+            <input type="hidden" id="assignmentId" value="<%= @assignmentId %>" name="assignmentId"/>
+            <input type="hidden" id="workerId" value="<%= @workerId %>" name="workerId"/>
+            <input type="hidden" id="hitId" value="<%= @hitId %>" name="hitId"/>
+	    <input type="hidden" id="label-count" value="<%= @labels %>" name="labels"/>
+    <br>
+    <br>
+    <center><h1>
+            <input type="submit" value="Submit">
+    </h1></center>
+        </form>
+    </body>
+</html>
