@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get   'utils/consent'
   get   'utils/agree'
+  get   'utils/submit'
   
   get   '/done', to: redirect('/surveys/mapmill/create')
 
