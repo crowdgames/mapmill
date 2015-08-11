@@ -10,7 +10,7 @@ class UtilsController < ApplicationController
     @cookie_id = ::ApplicationHelper::get_cookie_id(cookies)  
     votes = Vote.where(cookie: @cookie_id).to_a
     if votes.nil?
-      @labels = 22
+      @labels = 0
     else
       @labels = votes.count    
     end
@@ -41,6 +41,7 @@ class UtilsController < ApplicationController
     cookies['workerId']=params['workerId']
     cookies['hitId']=params['hitId']
     cookies['turkSubmitTo']=params['turkSubmitTo']
+
     # randomly choose a site based on cookie
     new_site_id = 1 + (::ApplicationHelper::cookie_id_to_int(::ApplicationHelper::get_cookie_id(cookies)) % NUM_SITES)
 
