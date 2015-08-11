@@ -21,5 +21,8 @@ module Mapmill
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+
+    # for mturk frame
+    config.action_dispatch.default_headers.merge!('x-frame-options' => 'none')
   end
 end

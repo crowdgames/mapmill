@@ -10,5 +10,15 @@ module ApplicationHelper
       return cookie_id
     end
   end
-  
+
+  def ApplicationHelper.cookie_id_to_int(cookie_id)
+    decoded = Base64.decode64(cookie_id)
+    unpacked = decoded.unpack("q*")
+    if unpacked.length == 0 then
+      return 0
+    else
+      return unpacked.first
+    end
+  end
+
 end

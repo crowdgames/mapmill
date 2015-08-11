@@ -82,6 +82,14 @@ If you still encounter problems with cross-domain errors, you can disable these 
 
 
 
+== Running with SSL
+
+To run the the servert with support for ssl/https you can use the following command:
+
+  thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
+
+
+
 == Usage
 
 The app only allows image upload after login. Login is only allowed with PublicLab's OpenID infrastructure.
