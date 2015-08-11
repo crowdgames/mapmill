@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :current_user
+  before_action :allow_iframe_requests
   helper_method :logged_in?
 
   def current_user
@@ -31,6 +32,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+    def allow_iframe_requests
+      response.headers.delete('X-Frame-Options')
+     # response.headers['X-Frame-Options']="none"
+    end    
+
     def require_login
       unless logged_in?
         path_info = request.env['PATH_INFO']
