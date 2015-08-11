@@ -7,8 +7,8 @@ class UtilsController < ApplicationController
     @hitId = cookies['hitId']
     @workerId = cookies['workerId']
     @turkSubmitTo = cookies['turkSubmitTo']
-    cookie_id = ::ApplicationHelper::get_cookie_id(cookies)  
-    votes = Vote.where(cookie: cookie_id).to_a
+    @cookie_id = ::ApplicationHelper::get_cookie_id(cookies)  
+    votes = Vote.where(cookie: @cookie_id).to_a
     if votes.nil?
       @labels = 22
     else
