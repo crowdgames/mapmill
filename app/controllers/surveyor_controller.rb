@@ -36,7 +36,8 @@ module SurveyorControllerCustomMethods
   end
   def surveyor_finish
     # the update action redirects to this method if given params[:finish]
-    super # surveyor.available_surveys_path
+    #super # surveyor.available_surveys_path
+    "/utils/submit" 
   end
 end
 

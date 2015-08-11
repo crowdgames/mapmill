@@ -65,7 +65,8 @@ gem 'will_paginate-bootstrap'
 
 gem 'leaflet-rails',          '0.7.4'
 gem 'passenger',              '4.0.53'
-#gem 'mysql'
+gem 'mysql'
+gem 'mysql2'
 #gem 'pg',                     '0.17.1'
 
 # for survey forms
