@@ -30,7 +30,7 @@ class UtilsController < ApplicationController
     if preview
       @agree_link = 'PLEASE ACCEPT THIS HIT TO CONTINUE'
     else
-      @agree_link = "<a href='/utils/agree?assignmentId="+assignmentId+"&hitId="+hitId+"&workerId="+workerId+"&turkSubmitTo="+turkSubmitTo+"'>CLICK HERE</a>"
+      @agree_link = "<a href='/utils/agree?assignmentId="+assignmentId+"&hitId="+hitId+"&workerId="+workerId+"&turkSubmitTo="+turkSubmitTo+"'>SURVEY LINK</a>"
     end
   end
 
