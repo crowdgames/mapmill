@@ -88,6 +88,14 @@ To run the the servert with support for ssl/https you can use the following comm
 
   thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
 
+To run a fakes3 with ssl support, change the following line in your `config/app_environment_vars.rb` file:
+
+  ENV['S3_DEV_PROTOCOL']='https'
+
+Run the fakes3 command with the https origin.
+
+  fakes3 -r [root] -p [port] -o [allowed origin with ssl: https://localhost:3000]
+
 
 
 == Usage
