@@ -498,7 +498,7 @@ $(document).ready ->
         if $('#blueimp-gallery').hasClass('auto-advance')
           gallery = $('#blueimp-gallery').data('gallery')
           if gallery.getIndex()+1 == gallery.getNumber()
-            location.href='/utils/done'
+            location.href='/done'
           else
             # auto-advance to next image
             gallery.next()
@@ -597,9 +597,9 @@ $(document).ready ->
     )
     .on('close', (event) ->
         # Gallery close event handler
-        location.href='/utils/done'
+        location.href='/done'
     )
     .on('closed', (event) ->
         # Gallery closed event handler
-        location.href='/utils/done'
+        location.href='/done'
     )
