@@ -5,51 +5,51 @@
     
    <form action= "<%= @turkSubmitTo %>/mturk/externalSubmit" method="POST">
       <p>1) Did you encounter any technical problems while using the system?</p> 
-      <input type="radio" name="techdiff" value="yes">Yes
+      <input type="radio" name="techdiff" value="yes"> Yes
       <br>
-      <input type="radio" name="techdiff" value="no">No
+      <input type="radio" name="techdiff" value="no"> No
       <p>If yes, please describe:</p>
-      <input type="text" name="techdifftext" class="textbox">
+      <textarea cols="50" rows="3" name="techdifftext"></textarea>
       <br>
       <br>
       <p>2) How confident are you in your damage ratings?</p>
-      <input type="radio" name="confidence" value="not">Not at all confident
+      <input type="radio" name="confidence" value="not"> Not at all confident
       <br>
-      <input type="radio" name="confidence" value="little">A little confident
+      <input type="radio" name="confidence" value="little"> A little confident
       <br>
-      <input type="radio" name="confidence" value="some">Somewhat confident
+      <input type="radio" name="confidence" value="some"> Somewhat confident
       <br>
-      <input type="radio" name="confidence" value="moderate">Moderately confident
+      <input type="radio" name="confidence" value="moderate"> Moderately confident
       <br>
-      <input type="radio" name="confidence" value="very">Very confident
+      <input type="radio" name="confidence" value="very"> Very confident
       <br>
       <br>
       <p>3) On a scale of 1 to 5 with 5 being the most enjoyment, how much did you enjoy completing this task?</p>
-      <input type="radio" name="enjoyment" value="1">1: Tedious
+      <input type="radio" name="enjoyment" value="1"> 1: Tedious
       <br>
-      <input type="radio" name="enjoyment" value="2">2: Boring
+      <input type="radio" name="enjoyment" value="2"> 2: Boring
       <br>
-      <input type="radio" name="enjoyment" value="3">3: Just OK
+      <input type="radio" name="enjoyment" value="3"> 3: Just OK
       <br>
-      <input type="radio" name="enjoyment" value="4">4: Liked it
+      <input type="radio" name="enjoyment" value="4"> 4: Liked it
       <br>
-      <input type="radio" name="enjoyment" value="5">5: Loved it!
+      <input type="radio" name="enjoyment" value="5"> 5: Loved it!
       <br>
       <br>
       <p>4) How worthwhile do you feel this project is?</p>
-      <input type="radio" name="worthwhile" value="not">Not at all worthwhile
+      <input type="radio" name="worthwhile" value="not"> Not at all worthwhile
       <br>
-      <input type="radio" name="worthwhile" value="a little">A little worthwhile
+      <input type="radio" name="worthwhile" value="a little"> A little worthwhile
       <br>
-      <input type="radio" name="worthwhile" value="somewhat">Somewhat worthwhile
+      <input type="radio" name="worthwhile" value="somewhat"> Somewhat worthwhile
       <br>
-      <input type="radio" name="worthwhile" value="moderate">Moderately worthwhile
+      <input type="radio" name="worthwhile" value="moderate"> Moderately worthwhile
       <br>
-      <input type="radio" name="worthwhile" value="very">Very worthwhile
+      <input type="radio" name="worthwhile" value="very"> Very worthwhile
       <br>
       <br>
       <p>In the space provided, please provide any additional feedback you would liek to share on this project.</p>
-      <input type="text" name="additional feedback">
+      <textarea cols="50" rows="3" name="additional feedback"></textarea>
       <br>
       <br>
       <p>Thank you for your time and your thoughts!!</p>
@@ -60,10 +60,10 @@
       <input type="hidden" id="label-count" value="<%= @labels %>" name="labels"/>
       <input type="hidden" id="cookieId" value="<%= @cookie_id %>" name="cookieId"/>
     <center>
-      <h2>Thank you for participating! Click Submit to complete your HIT!</h2>
+      <h3>Thank you for participating! Click Submit to complete your HIT!</h3>
     </center>
       <center>
-	<h1><input type="submit" value="Submit"></h1>
+	<h2><input type="submit" value="Submit"></h2>
       </center>
     </form>
   </body>
