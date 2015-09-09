@@ -3,6 +3,7 @@ require 'application_helper'
 class UtilsController < ApplicationController
 
   def submit
+    @siteId = cookies['siteId']
     @assignmentId = cookies['assignmentId']
     @hitId = cookies['hitId']
     @workerId = cookies['workerId']
@@ -41,9 +42,11 @@ class UtilsController < ApplicationController
     cookies['workerId']=params['workerId']
     cookies['hitId']=params['hitId']
     cookies['turkSubmitTo']=params['turkSubmitTo']
-
+ 
     # randomly choose a site based on cookie
     new_site_id = 1 + (::ApplicationHelper::cookie_id_to_int(::ApplicationHelper::get_cookie_id(cookies)) % NUM_SITES)
+
+    cookies['siteId']=params['new_site_id']
 
     # make full URL
     @new_site_url = request.base_url + "/sites/" + new_site_id.to_s
