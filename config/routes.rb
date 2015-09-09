@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Surveyor::Engine => "/surveys", :as => "surveyor"
   get 'home/front'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -30,7 +29,7 @@ Rails.application.routes.draw do
   get   'utils/agree'
   get   'utils/submit'
   
-  get   '/done', to: redirect('/surveys/mapmill/create')
+  get   '/done', to: redirect('/utils/submit')
 
   # You can have the root of your site routed with "root"
   root  'home#front'
@@ -84,6 +83,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
-Surveyor::Engine.routes.draw do
-  match '/:survey_code/create', :to                         => 'surveyor#create', :as => 'create_survey', :via       => :all
-end
+
