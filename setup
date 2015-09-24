@@ -1,7 +1,17 @@
-# For usage run:
-#   source setup
+#!/bin/bash --login
 
-if [ "$1" == "sudoer" ]; then
+# For usage run:
+#   ./setup
+
+set -e
+
+if ! shopt -q login_shell; then
+   echo "must be run as login shell"
+   exit
+fi
+
+
+if [ "$1" == "system" ]; then
     # install packages
     sudo echo -n
     sudo add-apt-repository -y ppa:chris-lea/node.js
@@ -14,6 +24,7 @@ if [ "$1" == "sudoer" ]; then
     
     sudo apt-get install -y nodejs
     sudo npm install -g bower
+
 
 elif [ "$1" == "user" ]; then
     # install ruby / rails
@@ -62,15 +73,14 @@ elif [ "$1" == "user" ]; then
     echo Run: fakes3 -p [port] -r [root folder] -o [allowed origin]
     echo Run: thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
 
+
 else
     echo "usage:"
     echo
     echo "  For system setup run as a user with sudo access:"
-    echo "    source setup sudoer"
+    echo "    ./setup system"
     echo
     echo "  For user setup run:"
-    echo "    source setup user"
-    echo
-    echo "  Note: must be run using source"
+    echo "    ./setup user"
 
 fi
