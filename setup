@@ -72,6 +72,8 @@ elif [ "$1" == "user" ]; then
     echo Edit: config/app_environment_vars.rb
     echo Run: fakes3 -p [port] -r [root folder] -o [allowed origin]
     echo Run: thin start -p [port] --ssl --ssl-key-file [key file] --ssl-cert-file [cert file]
+    echo
+    echo Note: ruby and rvm commands must be run in a login shell
 
 
 else
