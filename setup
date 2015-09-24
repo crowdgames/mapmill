@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# For system setup run as a user with sudo access:
-#   source setup sudoer
-# For user setup run:
-#   source setup user
+# For usage run:
+#   source setup
 
 if [ "$1" == "sudoer" ]; then
     # install packages
-    sudo echo
+    sudo echo -n
     sudo add-apt-repository -y ppa:chris-lea/node.js
     sudo apt-get update
     sudo apt-get install -y emacs24
@@ -68,9 +66,13 @@ elif [ "$1" == "user" ]; then
 
 else
     echo "usage:"
+    echo
     echo "  For system setup run as a user with sudo access:"
     echo "    source setup sudoer"
+    echo
     echo "  For user setup run:"
     echo "    source setup user"
+    echo
+    echo "  Note: must be run using source"
 
 fi
