@@ -32,6 +32,7 @@ sudo npm install -g bower
 # install ruby / rails
 sudo su -l $user <<EOF
 set -e
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 rvm install 2.1.5
