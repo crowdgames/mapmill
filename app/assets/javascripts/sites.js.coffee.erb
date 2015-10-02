@@ -468,25 +468,34 @@ $(document).ready ->
 #####################
  
   # Click handlers when selecting image quality
-  $('.image_controls .btn-success').click () ->
+  $('.detail_control .btn-success').click () ->
+    if $(this).hasClass('btn_disabled')
+      return
     btn       = $(this)
     id        = $(this).attr('id')
     #index 9 is after id 'btn_good_'
     image_id  = id.substr(9)
+    $(this).addClass('btn_disabled')
     set_quality(btn, image_id, 'set_good')
   
-  $('.image_controls .btn-primary').click () ->
+  $('.detail_control .btn-primary').click () ->
+    if $(this).hasClass('btn_disabled')
+      return
     btn       = $(this)
     id        = $(this).attr('id')
     #index 8 is after id 'btn_nok_'
     image_id  = id.substr(8)
+    $(this).addClass('btn_disabled')    
     set_quality(btn, image_id, 'set_nok')
   
-  $('.image_controls .btn-danger').click () ->
+  $('.detail_control .btn-danger').click () ->
+    if $(this).hasClass('btn_disabled')
+      return
     btn       = $(this)
     id        = $(this).attr('id')
     #index 8 is after id 'btn_bad_'
     image_id  = id.substr(8)
+    $(this).addClass('btn_disabled')
     set_quality(btn, image_id, 'set_bad')
   
   # Actually save the new quality to the server 
