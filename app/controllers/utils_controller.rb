@@ -22,7 +22,7 @@ class UtilsController < ApplicationController
     hitId = params['hitId']
     workerId = params['workerId']
     turkSubmitTo = params['turkSubmitTo']
-    
+
     preview = false
     if assignmentId == 'ASSIGNMENT_ID_NOT_AVAILABLE' or assignmentId.nil? or workerId.nil? or hitId.nil? or turkSubmitTo.nil?
        preview = true
@@ -35,7 +35,7 @@ class UtilsController < ApplicationController
     end
   end
 
-  NUM_SITES = 4
+  NUM_SITES = 2
 
   def agree
     cookies['assignmentId']=params['assignmentId']
@@ -46,7 +46,7 @@ class UtilsController < ApplicationController
     # randomly choose a site based on cookie
     new_site_id = 1 + (::ApplicationHelper::cookie_id_to_int(::ApplicationHelper::get_cookie_id(cookies)) % NUM_SITES)
 
-    cookies['siteId']=params['new_site_id']
+    cookies['siteId']=new_site_id
 
     # make full URL
     @new_site_url = request.base_url + "/sites/" + new_site_id.to_s
