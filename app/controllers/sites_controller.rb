@@ -84,7 +84,7 @@ class SitesController < ApplicationController
     orderimg = Image.where(site_id:params[:id]).where('custom != 0').order('custom asc') 
     randimg = Image.where(site_id:params[:id]).where('custom = 0').order('id asc').shuffle(random: Random.new(seed_final))
     @images = orderimg.push(*randimg)
-    @images = @images.paginate(:page => params[:page], :per_page => 100) unless @images.nil?
+    @images = @images.paginate(:page => params[:page], :per_page => 300) unless @images.nil?
     @images ||= []
     @votes = {}
     @images.each do | img |
