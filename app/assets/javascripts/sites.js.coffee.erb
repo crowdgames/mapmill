@@ -552,13 +552,25 @@ $(document).ready ->
 	
 	# Click handlers for setting the image quality in the detailed dialog view
   $('#blueimp-gallery .detail_image_controls .btn-success').click () ->
-    set_quality $(this), current_img, 'set_good'
+    if $(this).hasClass('btn_disabled')
+       return
+    else
+       set_quality $(this), current_img, 'set_good'
+       $(this).addClass('btn_disabled')
 
   $('#blueimp-gallery .detail_image_controls .btn-warning').click () ->
-    set_quality $(this), current_img, 'set_nok'
+    if $(this).hasClass('btn_disabled')
+       return
+    else
+       set_quality $(this), current_img, 'set_nok'
+       $(this).addClass('btn_disabled')
 
   $('#blueimp-gallery .detail_image_controls .btn-danger').click () ->
-    set_quality $(this), current_img, 'set_bad'
+    if $(this).hasClass('btn_disabled')
+       return
+    else
+       set_quality $(this), current_img, 'set_bad'
+       $(this).addClass('btn_disabled')
 
   # The image gallery widget
   $('#blueimp-gallery')
