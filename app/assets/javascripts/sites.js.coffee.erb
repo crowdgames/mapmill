@@ -549,6 +549,7 @@ $(document).ready ->
 #####################
   $('#test_button').click () ->
     $('#links .thumbnail').first().click()
+    alert 'For the first several images you will be told whether you selected the correct label'
 
 # Click handlers for setting the image quality in the detailed dialog view
   $('#blueimp-gallery .detail_image_controls .btn-success').click () ->
@@ -557,11 +558,15 @@ $(document).ready ->
     else
        gallery = $('#blueimp-gallery').data('gallery')
        curImage = gallery.getIndex()
-       if curImage < 8
+       if curImage < 9
          if curImage % 3 == 2
-            alert 'You guessed correct'
+            alert 'Correct!'
+         else if curImage % 3 == 1
+            alert 'Incorrect.\nThe correct label was Some'
          else
-            alert 'Incorrect guess!'
+            alert 'Incorrect.\nThe correct label was Heavy'
+       else if curImage == 9
+            alert 'Congratulations, you have completed the training set!'       
        set_quality $(this), current_img, 'set_good'
        $(this).addClass('btn_disabled')
 
@@ -571,11 +576,15 @@ $(document).ready ->
     else
        gallery = $('#blueimp-gallery').data('gallery')
        curImage = gallery.getIndex()
-       if curImage < 8
+       if curImage < 9
          if curImage % 3 == 1
-            alert 'You guessed correct'
+            alert 'Correct!'
+         else if curImage % 3 == 0
+            alert 'Incorrect.\nThe correct label was Heavy'
          else
-            alert 'Incorrect guess!'
+            alert 'Incorrect.\nThe correct label was None'
+       else if curImage == 9
+            alert 'Congratulations, you have completed the training set!'
        set_quality $(this), current_img, 'set_nok'
        $(this).addClass('btn_disabled')
 
@@ -585,11 +594,15 @@ $(document).ready ->
     else
        gallery = $('#blueimp-gallery').data('gallery')
        curImage = gallery.getIndex()
-       if curImage < 8
+       if curImage < 9
          if curImage % 3 == 0
-            alert 'You guessed correct'
+            alert 'Correct!'
+         else if curImage % 3 == 1
+            alert 'Incorrect.\nThe correct label was Some'
          else
-            alert 'Incorrect guess!'
+            alert 'Incorrect.\nThe correct label was None'
+       else if curImage == 9
+            alert ''Congratulations, you have completed the training set!'
        set_quality $(this), current_img, 'set_bad'
        $(this).addClass('btn_disabled')
 
