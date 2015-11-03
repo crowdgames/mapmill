@@ -1,70 +1,67 @@
-<html>
-  <body>
-    <h1>Mapmill Follow up Survey</h1>
-    <p>Thank you for taking the time to contribute to our study. Your participation is invaluable to our work. As we move forward, we would like to get some feedback from you about the usability of our software so that we can take your thoughts into consideration during redevelopment. Please take a few moments to complete our brief questionnaire and feel free to provide any additional comments you would like to share with us. Thanks!!</p>
+<h1>Mapmill Follow up Survey</h1>
+<p>Thank you for taking the time to contribute to our study. Your participation is invaluable to our work. As we move forward, we would like to get some feedback from you about the usability of our software so that we can take your thoughts into consideration during redevelopment. Please take a few moments to complete our brief questionnaire and feel free to provide any additional comments you would like to share with us. Thanks!!</p>
     
-   <form action= "<%= @turkSubmitTo %>/mturk/externalSubmit" method="POST">
-      <p>1) Did you encounter any technical problems while using the system?</p> 
-      <input type="radio" name="techdiff" value="yes"> Yes
-      <br>
-      <input type="radio" name="techdiff" value="no"> No
-      <p>If yes, please describe:</p>
-      <textarea cols="50" rows="3" name="techdifftext"></textarea>
-      <br>
-      <br>
-      <p>2) How confident are you in your damage ratings?</p>
-      <input type="radio" name="confidence" value="not"> Not at all confident
-      <br>
-      <input type="radio" name="confidence" value="little"> A little confident
-      <br>
-      <input type="radio" name="confidence" value="some"> Somewhat confident
-      <br>
-      <input type="radio" name="confidence" value="moderate"> Moderately confident
-      <br>
-      <input type="radio" name="confidence" value="very"> Very confident
-      <br>
-      <br>
-      <p>3) On a scale of 1 to 5 with 5 being the most enjoyment, how much did you enjoy completing this task?</p>
-      <input type="radio" name="enjoyment" value="1"> 1: Tedious
-      <br>
-      <input type="radio" name="enjoyment" value="2"> 2: Boring
-      <br>
-      <input type="radio" name="enjoyment" value="3"> 3: Just OK
-      <br>
-      <input type="radio" name="enjoyment" value="4"> 4: Liked it
-      <br>
-      <input type="radio" name="enjoyment" value="5"> 5: Loved it!
-      <br>
-      <br>
-      <p>4) How worthwhile do you feel this project is?</p>
-      <input type="radio" name="worthwhile" value="not"> Not at all worthwhile
-      <br>
-      <input type="radio" name="worthwhile" value="a little"> A little worthwhile
-      <br>
-      <input type="radio" name="worthwhile" value="somewhat"> Somewhat worthwhile
-      <br>
-      <input type="radio" name="worthwhile" value="moderate"> Moderately worthwhile
-      <br>
-      <input type="radio" name="worthwhile" value="very"> Very worthwhile
-      <br>
-      <br>
-      <p>In the space provided, please provide any additional feedback you would liek to share on this project.</p>
-      <textarea cols="50" rows="3" name="additional feedback"></textarea>
-      <br>
-      <br>
-      <p>Thank you for your time and your thoughts!!</p>
+<form action= "<%= @turkSubmitTo %>/mturk/externalSubmit" method="POST">
+<p>1) Did you encounter any technical problems while using the system?</p> 
+<input type="radio" name="techdiff" value="yes"> Yes
+<br>
+<input type="radio" name="techdiff" value="no"> No
+<p>If yes, please describe:</p>
+<textarea cols="50" rows="3" name="techdifftext"></textarea>
+<br>
+<br>
+<p>2) How confident are you in your damage ratings?</p>
+<input type="radio" name="confidence" value="not"> Not at all confident
+<br>
+<input type="radio" name="confidence" value="little"> A little confident
+<br>
+<input type="radio" name="confidence" value="some"> Somewhat confident
+<br>
+<input type="radio" name="confidence" value="moderate"> Moderately confident
+<br>
+<input type="radio" name="confidence" value="very"> Very confident
+<br>
+<br>
+<p>3) On a scale of 1 to 5 with 5 being the most enjoyment, how much did you enjoy completing this task?</p>
+<input type="radio" name="enjoyment" value="1"> 1: Tedious
+<br>
+<input type="radio" name="enjoyment" value="2"> 2: Boring
+<br>
+<input type="radio" name="enjoyment" value="3"> 3: Just OK
+<br>
+<input type="radio" name="enjoyment" value="4"> 4: Liked it
+<br>
+<input type="radio" name="enjoyment" value="5"> 5: Loved it!
+<br>
+<br>
+<p>4) How worthwhile do you feel this project is?</p>
+<input type="radio" name="worthwhile" value="not"> Not at all worthwhile
+<br>
+<input type="radio" name="worthwhile" value="a little"> A little worthwhile
+<br>
+<input type="radio" name="worthwhile" value="somewhat"> Somewhat worthwhile
+<br>
+<input type="radio" name="worthwhile" value="moderate"> Moderately worthwhile
+<br>
+<input type="radio" name="worthwhile" value="very"> Very worthwhile
+<br>
+<br>
+<p>In the space provided, please provide any additional feedback you would like to share on this project.</p>
+<textarea cols="50" rows="3" name="additional feedback"></textarea>
+<br>
+<br>
+<p>Thank you for your time and your thoughts!!</p>
 
-      <input type="hidden" id="siteId" value="<%= @siteId %>" name="siteId"/>
-      <input type="hidden" id="workerId" value="<%= @workerId %>" name="workerId"/>
-      <input type="hidden" id="hitId" value="<%= @hitId %>" name="hitId"/>
-      <input type="hidden" id="label-count" value="<%= @labels %>" name="labels"/>
-      <input type="hidden" id="cookieId" value="<%= @cookie_id %>" name="cookieId"/>
-    <center>
-      <h3>Thank you for participating! Click Submit to complete your HIT!</h3>
-    </center>
-      <center>
-	<h2><input type="submit" value="Submit"></h2>
-      </center>
-    </form>
-  </body>
-</html>
+<input type="hidden" id="siteId" value="<%= @siteId %>" name="siteId"/>
+<input type="hidden" id="workerId" value="<%= @workerId %>" name="workerId"/>
+<input type="hidden" id="assignmentId" value="<%= @assignmentId %>" name="assignmentId"/>
+<input type="hidden" id="hitId" value="<%= @hitId %>" name="hitId"/>
+<input type="hidden" id="label-count" value="<%= @labels %>" name="labels"/>
+<input type="hidden" id="cookieId" value="<%= @cookie_id %>" name="cookieId"/>
+<center>
+<h3>Thank you for participating! Click Submit to complete your HIT!</h3>
+</center>
+<center>
+<h2><input type="submit" value="Submit"></h2>
+</center>
+</form>
