@@ -3,23 +3,23 @@
     
 <form action= "<%= @turkSubmitTo %>/mturk/externalSubmit" method="POST">
 <p>1) Did you encounter any technical problems while using the system?</p> 
-<input type="radio" name="techdiff" value="yes"> Yes
+<input type="radio" name="techdiff" value="1"> Yes
 <br>
-<input type="radio" name="techdiff" value="no"> No
+<input type="radio" name="techdiff" value="0"> No
 <p>If yes, please describe:</p>
 <textarea cols="50" rows="3" name="techdifftext"></textarea>
 <br>
 <br>
 <p>2) How confident are you in your damage ratings?</p>
-<input type="radio" name="confidence" value="not"> Not at all confident
+<input type="radio" name="confidence" value="1"> Not at all confident
 <br>
-<input type="radio" name="confidence" value="little"> A little confident
+<input type="radio" name="confidence" value="2"> A little confident
 <br>
-<input type="radio" name="confidence" value="some"> Somewhat confident
+<input type="radio" name="confidence" value="3"> Somewhat confident
 <br>
-<input type="radio" name="confidence" value="moderate"> Moderately confident
+<input type="radio" name="confidence" value="4"> Moderately confident
 <br>
-<input type="radio" name="confidence" value="very"> Very confident
+<input type="radio" name="confidence" value="5"> Very confident
 <br>
 <br>
 <p>3) On a scale of 1 to 5 with 5 being the most enjoyment, how much did you enjoy completing this task?</p>
@@ -35,15 +35,15 @@
 <br>
 <br>
 <p>4) How worthwhile do you feel this project is?</p>
-<input type="radio" name="worthwhile" value="not"> Not at all worthwhile
+<input type="radio" name="worthwhile" value="1"> Not at all worthwhile
 <br>
-<input type="radio" name="worthwhile" value="a little"> A little worthwhile
+<input type="radio" name="worthwhile" value="2"> A little worthwhile
 <br>
-<input type="radio" name="worthwhile" value="somewhat"> Somewhat worthwhile
+<input type="radio" name="worthwhile" value="3"> Somewhat worthwhile
 <br>
-<input type="radio" name="worthwhile" value="moderate"> Moderately worthwhile
+<input type="radio" name="worthwhile" value="4"> Moderately worthwhile
 <br>
-<input type="radio" name="worthwhile" value="very"> Very worthwhile
+<input type="radio" name="worthwhile" value="5"> Very worthwhile
 <br>
 <br>
 <p>In the space provided, please provide any additional feedback you would like to share on this project.</p>
