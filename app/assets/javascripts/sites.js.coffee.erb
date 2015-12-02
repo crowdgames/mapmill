@@ -555,22 +555,21 @@ $(document).ready ->
     if $(this).hasClass('btn_disabled')
        return
     else
-       set_quality $(this), current_img, 'set_good'
        $(this).addClass('btn_disabled')
-
+       set_quality $(this), current_img, 'set_good'
   $('#blueimp-gallery .detail_image_controls .btn-warning').click () ->
     if $(this).hasClass('btn_disabled')
        return
     else
-       set_quality $(this), current_img, 'set_nok'
        $(this).addClass('btn_disabled')
-
+       set_quality $(this), current_img, 'set_nok'
+  
   $('#blueimp-gallery .detail_image_controls .btn-danger').click () ->
     if $(this).hasClass('btn_disabled')
        return
     else
-       set_quality $(this), current_img, 'set_bad'
        $(this).addClass('btn_disabled')
+       set_quality $(this), current_img, 'set_bad'
 
   # The image gallery widget
   $('#blueimp-gallery')
